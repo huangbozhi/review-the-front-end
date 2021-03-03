@@ -1,3 +1,5 @@
+// 转置矩阵
+
 // m行*n列 -> n*m
 function transpose(a) {
   let m = a.length

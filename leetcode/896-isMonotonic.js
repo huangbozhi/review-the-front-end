@@ -1,3 +1,5 @@
+// 单调 数组
+
 function isMonotonic(a) {
   if (a.length == 1) return a
   let len = a.length

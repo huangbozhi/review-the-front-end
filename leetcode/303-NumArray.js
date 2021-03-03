@@ -1,3 +1,5 @@
+// 一维区域和检索 
+
 var NumArray = function (nums) {
   this.sums = [];
   let sum = 0
