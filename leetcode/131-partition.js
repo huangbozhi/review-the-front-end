@@ -1,3 +1,5 @@
+// 分割回文串 I
+
 /**
  * @param {string} s
  * @return {string[][]}
@@ -48,4 +50,4 @@ var partition = function(s) {
   return ret;
 };
 
-console.log(partition('ab'))
+console.log(partition('abcaba'))
