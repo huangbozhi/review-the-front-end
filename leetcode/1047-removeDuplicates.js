@@ -1,5 +1,4 @@
 // 删除字符串中的所有相邻重复项
-
 function removeDuplicates(str) {
   if (str.length == 1) return str
   let i = 0;
