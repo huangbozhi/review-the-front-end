@@ -28,5 +28,5 @@ var longestWord = function(words) {
   return res
 }
 
-let set = new Set()
-
+// localeCompare 原理不太理解
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
