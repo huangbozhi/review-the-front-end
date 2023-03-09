@@ -4,24 +4,57 @@
  * @param {string} s
  * @return {string[][]}
  */
-// var partition = function (s) {
-//     if (s.length == 1) return [[s]]
-//     let res = []
-//     res[0] = s.split('')
-//     let length = s.length
-//     let tempArr = []
-//     for (let i = 0; i < length; i++) {
-//         for (let j = i + 1; j <= length; j++) {
-//             let temp = s.substr(i, j + 1)
-//             if (temp == temp.split('').reverse().join('')) {
-//                 tempArr.push(temp)
-//             }
-//         }
+var partition1 = function (s) {
+    if (s.length == 1) return [[s]]
+    let res = []
+    res[0] = s.split('')
+    let len = s.length
+    let tempArr = []
 
-//     }
-//     tempArr.length && res.push(tempArr)
-//     return res
-// };
+    const dfs = (s, poi, index) => {
+
+			if (poi === len) {
+				return
+			}
+
+			// 一般情况
+			let str = ''
+			for (let i = poi, j = 2; i < len; j++) {
+				str = s.substr(poi, j)
+				console.log(i, j, 'str: ', str)
+				if (str === str.split('').reverse().join('')) {
+					console.log('reverse:', str.split('').reverse().join(''))
+					if (!res[index]) res[index] = []
+					res[index].push(str)
+					dfs(s, poi + 1, index + 1)
+				} else {
+					// j = 1
+					i = 1 + poi
+					j = 1
+					// dfs(s, i, index)
+					console.log(i, j, '---')
+
+					break
+				}
+			}
+    }
+		dfs(s, 0, 1)
+    // for (let i = 0; i < len; i++) {
+    //     for (let j = i + 1; j <= len; j++) {
+    //         let temp = s.substr(i, j + 1)
+    //         if (temp == temp.split('').reverse().join('')) {
+    //             tempArr.push(temp)
+    //         }
+    //     }
+
+    // }
+    // tempArr.length && res.push(tempArr)
+		console.log('res: ', res)
+    return res
+};
+
+partition1('aab')
+// partition1('aab')
 
 var partition = function(s) {
   const dfs = (i) => {
@@ -50,4 +83,4 @@ var partition = function(s) {
   return ret;
 };
 
-console.log(partition('abcaba'))
+// console.log(partition('abcaba'))
